@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout title="Contact — Portfolio">
+  <h1 class="text-2xl md:text-3xl font-bold mb-6">Contact</h1>
+  <p class="text-slate-600 dark:text-slate-300 mb-6">Use the form below to get in touch. This uses Formspree (free tier) which doesn’t require a backend.</p>
+  <form action="https://formspree.io/f/xbjvaplk" method="POST" class="max-w-xl space-y-4">
+    <div>
+      <label class="block text-sm mb-1" for="name">Name</label>
+      <input id="name" name="name" required class="w-full rounded-md border px-3 py-2 bg-white dark:bg-slate-950" />
+    </div>
+    <div>
+      <label class="block text-sm mb-1" for="email">Email</label>
+      <input id="email" name="email" type="email" required class="w-full rounded-md border px-3 py-2 bg-white dark:bg-slate-950" />
+    </div>
+    <div>
+      <label class="block text-sm mb-1" for="message">Message</label>
+      <textarea id="message" name="message" required rows="5" class="w-full rounded-md border px-3 py-2 bg-white dark:bg-slate-950"></textarea>
+    </div>
+    <button class="inline-flex items-center gap-2 rounded-md bg-sky-600 px-4 py-2 text-white hover:bg-sky-700" type="submit">Send</button>
+  </form>
+</Layout>
+
+

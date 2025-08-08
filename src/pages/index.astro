@@ -1,4 +1,41 @@
 ---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout title="Carlos Arroyo — Portfolio" description="Projects in Python, Power BI, and analytics.">
+  <section class="grid gap-8 md:grid-cols-2 items-center">
+    <div class="space-y-5">
+      <h1 class="text-3xl md:text-5xl font-bold leading-tight">Hi, I'm Carlos. I build data products, analytics and automation.</h1>
+      <p class="text-slate-600 dark:text-slate-300">This portfolio highlights selected work across Python, Power BI, and reporting. Explore projects, view interactive dashboards, and check code samples.</p>
+      <div class="flex gap-3">
+        <a href="/projects" class="inline-flex items-center gap-2 rounded-md bg-sky-600 px-4 py-2 text-white hover:bg-sky-700">View Projects</a>
+        <a href="/bi" class="inline-flex items-center gap-2 rounded-md border px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-900">See BI Work</a>
+      </div>
+    </div>
+    <div class="aspect-[4/3] rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-gradient-to-br from-sky-100 to-indigo-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-slate-500">
+      <span class="text-sm">Hero image placeholder</span>
+    </div>
+  </section>
+
+  <section class="mt-16 space-y-6">
+    <h2 class="text-xl font-semibold">Featured</h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      <a href="/projects/sample-project" class="block rounded-lg border p-5 hover:border-sky-300 dark:hover:border-sky-700">
+        <h3 class="font-medium">Sample Project</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Short description of a project with outcomes.</p>
+      </a>
+      <a href="/bi" class="block rounded-lg border p-5 hover:border-sky-300 dark:hover:border-sky-700">
+        <h3 class="font-medium">Power BI Showcase</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Embedded dashboards with publish-to-web or secure links.</p>
+      </a>
+      <a href="/code" class="block rounded-lg border p-5 hover:border-sky-300 dark:hover:border-sky-700">
+        <h3 class="font-medium">Code Samples</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Python snippets, notebooks, and repo links.</p>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+---
 
 ---
 
