@@ -1,24 +1,148 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
-<Layout title="Contact — Portfolio">
-  <h1 class="text-2xl md:text-3xl font-bold mb-6">Contact</h1>
-  <p class="text-slate-600 dark:text-slate-300 mb-6">Use the form below to get in touch. This uses Formspree (free tier) which doesn’t require a backend.</p>
-  <form action="https://formspree.io/f/xbjvaplk" method="POST" class="max-w-xl space-y-4">
-    <div>
-      <label class="block text-sm mb-1" for="name">Name</label>
-      <input id="name" name="name" required class="w-full rounded-md border px-3 py-2 bg-white dark:bg-slate-950" />
+
+<Layout title="Contact - Carlos Arroyo" description="Get in touch with Carlos Arroyo for collaboration opportunities, questions, or professional inquiries.">
+  <!-- Hero Section -->
+  <section class="relative mb-16">
+    <div class="text-center space-y-6">
+      <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+        Get In Touch
+      </h1>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+        Ready to collaborate on supply chain optimization, data analytics, or business intelligence projects? 
+        Let's discuss how we can work together to drive operational excellence.
+      </p>
     </div>
-    <div>
-      <label class="block text-sm mb-1" for="email">Email</label>
-      <input id="email" name="email" type="email" required class="w-full rounded-md border px-3 py-2 bg-white dark:bg-slate-950" />
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="max-w-4xl mx-auto">
+    <div class="grid gap-12 lg:grid-cols-2">
+      <!-- Contact Information -->
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-6">Let's Connect</h2>
+          <p class="text-gray-400 leading-relaxed mb-8">
+            I'm always interested in new opportunities and collaborations. Whether you have a project in mind, 
+            want to discuss supply chain strategies, or just want to connect professionally, I'd love to hear from you.
+          </p>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-white">Email</h3>
+              <p class="text-gray-400">carroyoca@hotmail.com</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-white">LinkedIn</h3>
+              <a href="https://www.linkedin.com/in/carlos-arroyo-308734141/" target="_blank" rel="noreferrer" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-white">Location</h3>
+              <p class="text-gray-400">Available for remote opportunities worldwide</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8">
+        <h2 class="text-2xl font-bold text-white mb-6">Send a Message</h2>
+        
+        <form action="https://formspree.io/f/xbjvaplk" method="POST" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+              placeholder="Enter your full name"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+              placeholder="Enter your email address"
+            />
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+            <input 
+              type="text" 
+              id="subject" 
+              name="subject" 
+              class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+              placeholder="What's this about?"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message *</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              required 
+              rows="5" 
+              class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+              placeholder="Tell me about your project, opportunity, or how I can help..."
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 transform hover:scale-105"
+          >
+            <span class="flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+              </svg>
+              Send Message
+            </span>
+          </button>
+        </form>
+
+        <p class="text-xs text-gray-500 mt-4 text-center">
+          This form is powered by Formspree and will send your message directly to my email.
+        </p>
+      </div>
     </div>
-    <div>
-      <label class="block text-sm mb-1" for="message">Message</label>
-      <textarea id="message" name="message" required rows="5" class="w-full rounded-md border px-3 py-2 bg-white dark:bg-slate-950"></textarea>
-    </div>
-    <button class="inline-flex items-center gap-2 rounded-md bg-sky-600 px-4 py-2 text-white hover:bg-sky-700" type="submit">Send</button>
-  </form>
+  </section>
 </Layout>
 
 
