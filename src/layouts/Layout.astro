@@ -4,54 +4,67 @@ export interface Props {
   description?: string;
 }
 
-const { title = "Portfolio", description = "Projects, Data, and BI" } = Astro.props as Props;
+const { title = "Carlos Arroyo — Portfolio", description = "Data Scientist & Analytics Professional" } = Astro.props as Props;
 import "../styles/global.css";
 const base = import.meta.env.BASE_URL || "/";
 ---
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" href={`${base}favicon.svg`} />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0f0f23" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
-  <body class="min-h-screen bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-[Inter]">
-    <header class="sticky top-0 z-10 border-b border-slate-200/60 dark:border-slate-800/60 bg-white/80 dark:bg-slate-950/70 backdrop-blur">
-      <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        <a href={base} class="text-lg font-semibold tracking-tight">Portfolio</a>
-        <ul class="flex items-center gap-4 text-sm">
-          <li><a class="hover:text-sky-600" href={`${base}projects`}>Projects</a></li>
-          <li><a class="hover:text-sky-600" href={`${base}bi`}>Data/BI</a></li>
-          <li><a class="hover:text-sky-600" href={`${base}code`}>Code</a></li>
-          <li><a class="hover:text-sky-600" href={`${base}about`}>About</a></li>
-          <li><a class="hover:text-sky-600" href={`${base}contact`}>Contact</a></li>
-        </ul>
+  <body class="min-h-screen bg-[#0f0f23] text-white font-[Inter] antialiased overflow-x-hidden">
+    <!-- Background gradient -->
+    <div class="fixed inset-0 bg-gradient-to-br from-[#0f0f23] via-[#1a1a2e] to-[#16213e] pointer-events-none"></div>
+    
+    <!-- Animated background elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    </div>
+
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0f0f23]/80 backdrop-blur-xl">
+      <nav class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+        <a href={base} class="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+          Carlos Arroyo
+        </a>
+        <nav class="hidden md:flex space-x-8">
+          <a href="/" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a>
+          <a href="/about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
+          <a href="/code" class="text-gray-300 hover:text-white transition-colors duration-300">Code</a>
+          <a href="/bi" class="text-gray-300 hover:text-white transition-colors duration-300">Data/BI</a>
+          <a href="/business-cases" class="text-gray-300 hover:text-white transition-colors duration-300">Business Cases</a>
+          <a href="/contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+        </nav>
       </nav>
     </header>
-    <main class="mx-auto max-w-6xl px-4 py-10">
+    
+    <main class="relative z-10 mx-auto max-w-7xl px-6 py-20">
       <slot />
     </main>
-    <footer class="border-t border-slate-200/60 dark:border-slate-800/60">
-      <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p>© {new Date().getFullYear()} • Built with Astro</p>
-        <div class="flex items-center gap-4">
-          <a class="hover:text-sky-600" href="/docs/cv.pdf">CV</a>
-          <a class="hover:text-sky-600" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="hover:text-sky-600" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+    
+    <footer class="relative z-10 border-t border-white/10 bg-[#0f0f23]/50 backdrop-blur-xl">
+      <div class="mx-auto max-w-7xl px-6 py-12 text-sm text-gray-400 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <p>© {new Date().getFullYear()} Carlos Arroyo • Built with Astro & React</p>
+        <div class="flex items-center gap-6">
+          <a class="hover:text-purple-400 transition-colors duration-300" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="hover:text-purple-400 transition-colors duration-300" href="https://www.linkedin.com/in/carlos-arroyo-308734141/" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
       </div>
     </footer>
   </body>
-  </html>
+</html>
 
 

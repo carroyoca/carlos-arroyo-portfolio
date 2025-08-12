@@ -1,10 +1,134 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+// Function to safely read file content
+function readFileContent(filePath: string): string {
+  try {
+    return readFileSync(filePath, 'utf-8');
+  } catch (error) {
+    console.error(`Error reading file ${filePath}:`, error);
+    return `# Error reading file: ${filePath}\n# Please check file permissions and path.`;
+  }
+}
+
+// Function to escape HTML entities
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// Business descriptions for each script
+const scriptDescriptions: { [key: string]: string } = {
+  'mtf_manipulation_dbcreation.py': 'Olympic Games Logistics: Merges MTF (Material Transfer Form) data with attachment files to create a comprehensive database for Paris 2024 Olympic Games equipment tracking and documentation.',
+  'database_qa_olympics.py': 'Olympic Games Validation: Cross-references merged MTF data against the main Paris MTF database to identify which forms are properly registered and completed in the system.',
+  'Business_B - Ayser_procurement_analysis.py': 'Procurement Analytics: Consolidates and aggregates printer availability and volume data from multiple Excel files, calculating monthly averages and totals for business case analysis.',
+  '_Script_Database_.py': 'Equipment Management: Generates a comprehensive 5,000-record database for printing equipment across multiple businesses, including acquisition costs, maintenance schedules, and replacement cycles.',
+  'KPI_Experiment.py': 'Performance Metrics: Creates KPI datasets for supplier influence, decision support, sustainability metrics, business alignment, and operational efficiency in procurement operations.',
+  'manipulate_csvs.py': 'Data Standardization: Batch processes multiple CSV files from different music platforms (iTunes, Spotify, etc.) to standardize QA ownership fields and prepare data for ingestion.',
+  'automatic_stock_analysis.py': 'Inventory Analysis: Analyzes Olympic Games equipment inventory across multiple warehouse locations to identify equipment that hasn\'t moved, helping optimize storage and logistics.'
+};
+
+// Get scripts from the scripts directory
+const scriptsDir = join(process.cwd(), 'scripts');
+let scripts: Array<{filename: string, content: string, path: string, description: string}> = [];
+
+try {
+  const files = readdirSync(scriptsDir);
+  scripts = files
+    .filter(file => file.endsWith('.py') && !file.startsWith('.'))
+    .map(file => {
+      const filePath = join(scriptsDir, file);
+      const content = readFileContent(filePath);
+      return {
+        filename: file,
+        content: escapeHtml(content),
+        path: filePath,
+        description: scriptDescriptions[file] || 'Python automation script for data processing and analysis.'
+      };
+    })
+    .sort((a, b) => a.filename.localeCompare(b.filename)); // Sort alphabetically
+} catch (error) {
+  console.error('Error reading scripts directory:', error);
+  scripts = [];
+}
 ---
-<Layout title="Code Portfolio" description="Python scripts, notebooks, and repos.">
-  <h1 class="text-2xl md:text-3xl font-bold mb-6">Code</h1>
-  <div class="rounded-lg border p-5">
-    <p>Coming soon: curated code snippets and repositories.</p>
-  </div>
+
+<Layout title="Code Samples - Carlos Arroyo" description="Python scripts, notebooks, and automation tools with detailed documentation.">
+  <!-- Hero Section -->
+  <section class="relative mb-16">
+    <div class="text-center space-y-6">
+      <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+        Code Samples
+      </h1>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+        Explore my Python scripts, data analysis workflows, and automation tools. 
+        Each piece of code is designed to solve real-world data problems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Code Samples -->
+  <section class="space-y-8">
+    {scripts.length === 0 ? (
+      <div class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 text-center">
+        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-2">No Code Samples Found</h3>
+        <p class="text-gray-400 mb-4">Add your Python scripts to showcase your coding skills.</p>
+        <div class="bg-gray-800/50 rounded-lg p-4 text-sm text-gray-300">
+          <p>Place your .py files in: <code class="bg-gray-700 px-2 py-1 rounded">scripts/</code></p>
+        </div>
+      </div>
+    ) : (
+      <div class="grid gap-8">
+        {scripts.map((script) => (
+          <article class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300">
+            <div class="p-8">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h2 class="text-xl font-semibold text-white">{script.filename}</h2>
+                  <p class="text-sm text-gray-400">Python Script • {script.content.split('\n').length} lines</p>
+                </div>
+              </div>
+              
+              <!-- Business Description -->
+              <div class="mb-6 p-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl border border-purple-500/20">
+                <h3 class="text-sm font-semibold text-purple-300 mb-2">Business Purpose</h3>
+                <p class="text-sm text-gray-300 leading-relaxed">{script.description}</p>
+              </div>
+              
+              <div class="relative">
+                <pre class="overflow-x-auto text-sm bg-gray-900/80 p-6 rounded-xl border border-white/10 max-h-96 overflow-y-auto"><code class="language-python text-gray-200">{script.content}</code></pre>
+                <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button 
+                    class="bg-purple-600 hover:bg-purple-500 text-white px-3 py-1 rounded-lg text-xs font-medium transition-colors duration-300"
+                    onclick={`navigator.clipboard.writeText(\`${script.content.replace(/`/g, '\\`')}\`)`}
+                  >
+                    Copy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
+  </section>
+
+
 </Layout>
 

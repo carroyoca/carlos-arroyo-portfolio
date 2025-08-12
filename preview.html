@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carlos Arroyo — Portfolio</title>
+    <meta name="description" content="Data Scientist & Analytics Professional" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0f0f23" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0f23;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #8b5cf6, #3b82f6);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #7c3aed, #2563eb);
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.6); }
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease infinite;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        *:focus {
+            outline: 2px solid #8b5cf6;
+            outline-offset: 2px;
+        }
+        
+        ::selection {
+            background: rgba(139, 92, 246, 0.3);
+            color: white;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#0f0f23] text-white font-[Inter] antialiased overflow-x-hidden">
+    <!-- Background gradient -->
+    <div class="fixed inset-0 bg-gradient-to-br from-[#0f0f23] via-[#1a1a2e] to-[#16213e] pointer-events-none"></div>
+    
+    <!-- Animated background elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    </div>
+
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0f0f23]/80 backdrop-blur-xl">
+        <nav class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                Carlos Arroyo
+            </a>
+            <ul class="flex items-center gap-8 text-sm font-medium">
+                <li><a class="hover:text-purple-400 transition-colors duration-300" href="#projects">Projects</a></li>
+                <li><a class="hover:text-purple-400 transition-colors duration-300" href="#bi">Data/BI</a></li>
+                <li><a class="hover:text-purple-400 transition-colors duration-300" href="#code">Code</a></li>
+                <li><a class="hover:text-purple-400 transition-colors duration-300" href="#about">About</a></li>
+                <li><a class="hover:text-purple-400 transition-colors duration-300" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="relative z-10 mx-auto max-w-7xl px-6 py-16">
+        <!-- Hero Section -->
+        <section class="relative min-h-[90vh] flex items-center justify-center">
+            <!-- Animated background elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            </div>
+            
+            <div class="relative z-10 text-center space-y-8 max-w-4xl mx-auto">
+                <div class="space-y-4">
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                        <span class="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent animate-gradient">
+                            Carlos Arroyo
+                        </span>
+                    </h1>
+                    <p class="text-2xl md:text-3xl font-light text-gray-300">
+                        Data Scientist & Analytics Professional
+                    </p>
+                </div>
+                
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    I build intelligent data products, create compelling analytics, and automate complex workflows. 
+                    Transforming raw data into actionable insights that drive business decisions.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+                    <a href="#projects" class="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-medium hover:from-purple-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105">
+                        <span class="relative z-10">View Projects</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
+                    </a>
+                    <a href="#bi" class="px-8 py-4 border border-white/20 rounded-full font-medium hover:bg-white/5 transition-all duration-300">
+                        See BI Work
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="relative mt-32 space-y-16">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                    Featured Work
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Explore my latest projects in data science, business intelligence, and automation
+                </p>
+            </div>
+            
+            <div class="grid gap-8 md:grid-cols-3">
+                <a href="#projects" class="group relative block">
+                    <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative z-10 space-y-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">Sample Project</h3>
+                            <p class="text-gray-400">Advanced analytics project with machine learning implementation and business impact analysis.</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#bi" class="group relative block">
+                    <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative z-10 space-y-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">Power BI Showcase</h3>
+                            <p class="text-gray-400">Interactive dashboards and reports with embedded analytics and real-time data visualization.</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#code" class="group relative block">
+                    <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative z-10 space-y-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white">Code Samples</h3>
+                            <p class="text-gray-400">Python scripts, Jupyter notebooks, and automation tools with detailed documentation.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="relative mt-32 space-y-16">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                    Technologies & Skills
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    My toolkit for building data-driven solutions
+                </p>
+            </div>
+            
+            <div class="grid gap-6 md:grid-cols-4">
+                <div class="text-center space-y-3 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl">🐍</span>
+                    </div>
+                    <h3 class="font-semibold text-white">Python</h3>
+                    <p class="text-sm text-gray-400">Data Science & ML</p>
+                </div>
+                
+                <div class="text-center space-y-3 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl">📊</span>
+                    </div>
+                    <h3 class="font-semibold text-white">Power BI</h3>
+                    <p class="text-sm text-gray-400">Business Intelligence</p>
+                </div>
+                
+                <div class="text-center space-y-3 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl">🤖</span>
+                    </div>
+                    <h3 class="font-semibold text-white">Machine Learning</h3>
+                    <p class="text-sm text-gray-400">Predictive Analytics</p>
+                </div>
+                
+                <div class="text-center space-y-3 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <h3 class="font-semibold text-white">Automation</h3>
+                    <p class="text-sm text-gray-400">Process Optimization</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="relative z-10 border-t border-white/10 bg-[#0f0f23]/50 backdrop-blur-xl">
+        <div class="mx-auto max-w-7xl px-6 py-12 text-sm text-gray-400 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <p>© 2024 Carlos Arroyo • Built with Astro & React</p>
+            <div class="flex items-center gap-6">
+                <a class="hover:text-purple-400 transition-colors duration-300" href="/docs/cv.pdf">CV</a>
+                <a class="hover:text-purple-400 transition-colors duration-300" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="hover:text-purple-400 transition-colors duration-300" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,36 +1,122 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection';
 ---
-<Layout title="Carlos Arroyo — Portfolio" description="Projects in Python, Power BI, and analytics.">
-  <section class="grid gap-8 md:grid-cols-2 items-center">
-    <div class="space-y-5">
-      <h1 class="text-3xl md:text-5xl font-bold leading-tight">Hi, I'm Carlos. I build data products, analytics and automation.</h1>
-      <p class="text-slate-600 dark:text-slate-300">This portfolio highlights selected work across Python, Power BI, and reporting. Explore projects, view interactive dashboards, and check code samples.</p>
-      <div class="flex gap-3">
-        <a href="/projects" class="inline-flex items-center gap-2 rounded-md bg-sky-600 px-4 py-2 text-white hover:bg-sky-700">View Projects</a>
-        <a href="/bi" class="inline-flex items-center gap-2 rounded-md border px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-900">See BI Work</a>
+
+<Layout title="Carlos Arroyo - Supply Chain Analyst">
+  <HeroSection client:load />
+
+  <!-- Featured Work Section -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+        Featured Experience
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Boolanga -->
+        <div class="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl border border-blue-500/20 p-6 hover:from-blue-500/15 hover:to-purple-500/15 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-white">Global Supply Chain Analyst</h3>
+              <p class="text-sm text-gray-400">Boolanga • Remote</p>
+            </div>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Led data-driven solutions and operational workflows in remote-first environments, implementing collaborative platforms and automated dashboards for enhanced supply chain visibility and efficiency.
+          </p>
+        </div>
+
+        <!-- Olympic Broadcasting Services -->
+        <div class="bg-gradient-to-br from-green-500/10 to-teal-500/10 rounded-xl border border-green-500/20 p-6 hover:from-green-500/15 hover:to-teal-500/15 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/10">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-white">Supply Chain Analyst</h3>
+              <p class="text-sm text-gray-400">Olympic Broadcasting Services • Paris</p>
+            </div>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Developed automated dashboards and real-time monitoring systems for Paris 2024 operations, implementing SAP S/4HANA Cloud WMS and advanced data solutions using Power Query, Power Pivot, and Python.
+          </p>
+        </div>
+
+        <!-- FIFA World Cup -->
+        <div class="bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-xl border border-orange-500/20 p-6 hover:from-orange-500/15 hover:to-red-500/15 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-white">Supply Chain Logistics Coordinator</h3>
+              <p class="text-sm text-gray-400">FIFA World Cup Qatar 2022 • Doha</p>
+            </div>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Coordinated logistics operations for international press and technical teams across multiple venues, achieving zero critical failures during this Tier 1 global sports event.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="aspect-[4/3] rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-gradient-to-br from-sky-100 to-indigo-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-slate-500">
-      <span class="text-sm">Hero image placeholder</span>
     </div>
   </section>
 
-  <section class="mt-16 space-y-6">
-    <h2 class="text-xl font-semibold">Featured</h2>
-    <div class="grid gap-6 md:grid-cols-3">
-      <a href="/projects/sample-project" class="block rounded-lg border p-5 hover:border-sky-300 dark:hover:border-sky-700">
-        <h3 class="font-medium">Sample Project</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400">Short description of a project with outcomes.</p>
-      </a>
-      <a href="/bi" class="block rounded-lg border p-5 hover:border-sky-300 dark:hover:border-sky-700">
-        <h3 class="font-medium">Power BI Showcase</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400">Embedded dashboards with publish-to-web or secure links.</p>
-      </a>
-      <a href="/code" class="block rounded-lg border p-5 hover:border-sky-300 dark:hover:border-sky-700">
-        <h3 class="font-medium">Code Samples</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400">Python snippets, notebooks, and repo links.</p>
-      </a>
+  <!-- Skills Section -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+        Core Competencies
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl border border-blue-500/20 p-6 text-center hover:from-blue-500/15 hover:to-purple-500/15 transition-all duration-300">
+          <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Data Analysis</h3>
+          <p class="text-gray-400 text-sm">Power Query, Power Pivot, Python, SAP S/4HANA</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-500/10 to-teal-500/10 rounded-xl border border-green-500/20 p-6 text-center hover:from-green-500/15 hover:to-teal-500/15 transition-all duration-300">
+          <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Supply Chain</h3>
+          <p class="text-gray-400 text-sm">Logistics, Operations, ERP Implementation</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-xl border border-orange-500/20 p-6 text-center hover:from-orange-500/15 hover:to-red-500/15 transition-all duration-300">
+          <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Project Management</h3>
+          <p class="text-gray-400 text-sm">Agile, Lean Six Sigma, Cross-functional Teams</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl border border-purple-500/20 p-6 text-center hover:from-purple-500/15 hover:to-pink-500/15 transition-all duration-300">
+          <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Business Intelligence</h3>
+          <p class="text-gray-400 text-sm">Dashboards, Automation, Process Optimization</p>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
