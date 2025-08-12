@@ -1,5 +1,4 @@
-scripts/**
-!scripts/.gitkeep
+# Python scripts are now included in the repository
 # build output
 dist/
 # generated types
