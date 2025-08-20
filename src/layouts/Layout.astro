@@ -6,7 +6,11 @@ export interface Props {
 
 const { title = "Carlos Arroyo — Portfolio", description = "Data Scientist & Analytics Professional" } = Astro.props as Props;
 import "../styles/global.css";
+import { inject } from '@vercel/analytics';
 const base = import.meta.env.BASE_URL || "/";
+
+// Inject Vercel Analytics
+inject();
 ---
 <html lang="en" class="dark">
   <head>
